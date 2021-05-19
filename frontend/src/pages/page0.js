@@ -10,22 +10,22 @@ import Scene from '../components/menu'
 
 const Page0 = () =>{
  
-  function genNextTask(){
-   
-    fetch('http://localhost:3000/math_guru')
-    .then(res=>res)
-  //  .then(data=>console.log(data))
-   //.catch(error=>console.log(error))
-    
+  async function genNextTask(){
+    let response= await fetch('http://localhost:3000/math_guru')
+    let data= await response.json()
+    console.log(data)
+   // useEffect(()=>{data})
   }
   return(
   <>
     
     <Container>
+      
       <Button onClick={genNextTask}>next task</Button>
            <div>
              {}
              </div>
+             
     </Container>
 
 
